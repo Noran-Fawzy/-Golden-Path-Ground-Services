@@ -1,13 +1,15 @@
+/* ------------------ RESET ------------------ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
 body {
     background: #0b1624;
     color: white;
+    line-height: 1.6;
 }
 
 html {
@@ -19,28 +21,31 @@ img {
     height: 100px;
     object-fit: contain;
     margin-bottom: 5px;
-    margin-right:500px ;
+    margin-right: 500px;
 }
 
-header{
+/* ------------------ HEADER ------------------ */
+header {
     width: 100%;
     top: 0;
+    position: relative;
 }
 
-.line{
+.line {
     position: absolute;
-    bottom: 520px;
-    left: 450px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* TOP NAV */
+/* ------------------ TOP NAV ------------------ */
 .top-nav {
     background: #08121f;
     text-align: center;
     border-bottom: 1px solid gold;
 }
 
-/* MENU BUTTON */
+/* ------------------ MENU BUTTON ------------------ */
 .menu-btn {
     position: fixed;
     top: 15px;
@@ -55,7 +60,7 @@ header{
     border-radius: 10px;
 }
 
-/* SIDEBAR */
+/* ------------------ SIDEBAR ------------------ */
 .sidebar {
     position: fixed;
     top: 70px;
@@ -83,6 +88,7 @@ header{
     margin: 12px 0;
     padding: 5px;
     border-left: 4px solid transparent;
+    transition: 0.3s;
 }
 
 .sidebar a:hover {
@@ -90,7 +96,7 @@ header{
     background: #162b45;
 }
 
-/* CONTENT */
+/* ------------------ CONTENT ------------------ */
 .content {
     max-width: 900px;
     margin: 120px auto 60px;
@@ -111,25 +117,21 @@ h3 {
     color: gold;
 }
 
-.h h2{
-    color: white;
-}
-
-.hh h1{
+.hh h1 {
     color: white;
     text-align: center;
     font-size: 40px;
 }
 
-.hh h2{
+.h h2{
     color: white;
     text-align: center;
-    font-size: 30px;
 }
 
 .hh h2 {
     color: white;
     text-align: center;
+    font-size: 30px;
     position: relative;
     margin-bottom: 30px;
 }
@@ -145,41 +147,33 @@ h3 {
 }
 
 .hh p {
-    
     font-size: 20px;
-    line-height: 1.1;
 }
 
 .tagline {
     margin: 15px 0;
     line-height: 1.6;
-}
-.tagline p{
     text-align: center;
-    font-size: 20px;
 }
 
 .tagline i {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
-
     color: gold;
     font-size: 50px;
 }
 
 .badges span {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     color: white;
     padding: 10px 16px;
-    margin-right: 10px;
-    margin-top: 5px;
+    margin: 5px 10px 0 0;
     border-radius: 20px;
     border: 1px solid gold;
-    text-align: center;
     font-size: 14px;
-    align-items: center;
-    justify-content: center;
 }
 
 .badges span i {
@@ -187,7 +181,7 @@ h3 {
     color: gold;
 }
 
-/* DOWNLOAD BUTTON */
+/* ------------------ BUTTONS ------------------ */
 .download-btn {
     padding: 15px 20px;
     background: gold;
@@ -197,17 +191,16 @@ h3 {
     cursor: pointer;
 }
 
-/* CARDS CONTAINER */
+/* ------------------ CARDS ------------------ */
 .features {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     max-width: 1100px;
     margin: 80px auto;
     padding: 20px;
 }
 
-/* CARD DESIGN */
 .card {
     background: linear-gradient(145deg, #081f36, #051422);
     border: 1px solid rgba(255, 215, 0, 0.3);
@@ -221,7 +214,6 @@ h3 {
     border: 1px solid gold;
 }
 
-/* ICON */
 .icon {
     width: 55px;
     height: 55px;
@@ -238,7 +230,6 @@ h3 {
     font-size: 22px;
 }
 
-/* TEXT */
 .card h3 {
     color: gold;
     margin-bottom: 10px;
@@ -250,6 +241,7 @@ h3 {
     font-size: 15px;
 }
 
+/* ------------------ PARTNERS ------------------ */
 .partners-section {
     display: flex;
     flex-wrap: wrap;
@@ -257,11 +249,10 @@ h3 {
     align-items: center;
     gap: 20px;
     padding: 50px 20px;
-    min-height: 100vh;
 }
 
 .partner-card {
-background: #0f2238;
+    background: #0f2238;
     border-radius: 12px;
     padding: 30px;
     width: 250px;
@@ -269,7 +260,6 @@ background: #0f2238;
     text-align: center;
     border: 1px solid rgba(255, 215, 0, 0.3);
     transition: transform 0.3s ease;
-    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -307,6 +297,7 @@ background: #0f2238;
     line-height: 1.5;
 }
 
+/* ------------------ FOOTER ------------------ */
 .footer-column {
     flex: 1;
     min-width: 200px;
@@ -378,8 +369,6 @@ background: #0f2238;
     font-size: 16px;
 }
 
-/* ------------------ Footer Bottom Bar ------------------ */
-
 .main-footer {
     background-color: #0d1425;
     color: #c0c0c0;
@@ -397,8 +386,6 @@ background: #0f2238;
 .footer-bottom-bar {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 20px 0;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .footer-bottom-bar-content {
@@ -412,12 +399,10 @@ background: #0f2238;
 
 .copyright-text {
     flex-grow: 1;
-    margin: 0;
 }
 
 .certification-text {
     white-space: nowrap;
-    margin: 0;
 }
 
 .cert-icao,
@@ -426,9 +411,7 @@ background: #0f2238;
     font-weight: 700;
 }
 
-
-/* RESPONSIVE */
-/* --------- Media Queries --------- */
+/* ------------------ RESPONSIVE ------------------ */
 @media screen and (max-width: 1024px) {
     .features {
         grid-template-columns: 1fr;
@@ -446,15 +429,22 @@ background: #0f2238;
     }
 
     .line {
-       position: absolute;
-        left: 120px;
-        bottom: 760px;
-        font-size: 85%;
+        font-size: 80%;
+        padding: 15px 0;
+        margin-left: 24px;
     }
 
-    img {
-        margin-right: 180px;
+    .line h2,
+    .line h3 {
+        font-size: 14px;
+        margin-bottom:10px ;
+    }
+
+     img {
+        width: 80px;
+        height: 80px;
         margin-bottom: 10px;
+        margin-left:70px;
     }
 
     .hh h1 {
@@ -519,5 +509,21 @@ background: #0f2238;
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+    }
+
+    .line {
+        font-size: 75%;
+        padding: 10px 0;
+    }
+
+    .line h2,
+    .line h3 {
+        font-size: 12px;
+    }
+
+    .line img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 6px;
     }
 }
