@@ -23,13 +23,12 @@ img {
 }
 
 header{
-    position: fixed;
     width: 100%;
     top: 0;
 }
 
 .line{
-    position: fixed;
+    position: absolute;
     bottom: 520px;
     left: 450px;
 }
@@ -95,7 +94,6 @@ header{
 .content {
     max-width: 900px;
     margin: 120px auto 60px;
-
     padding: 20px;
 }
 
