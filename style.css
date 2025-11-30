@@ -446,13 +446,14 @@ background: #0f2238;
     }
 
     .line {
-        bottom: auto;
-        left: 20px;
-        top: 100px;
+       position: absolute;
+        left: 120px;
+        bottom: 760px;
+        font-size: 85%;
     }
 
     img {
-        margin-right: 0;
+        margin-right: 180px;
         margin-bottom: 10px;
     }
 
