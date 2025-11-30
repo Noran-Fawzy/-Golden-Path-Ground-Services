@@ -427,3 +427,98 @@ background: #0f2238;
     color: gold;
     font-weight: 700;
 }
+
+
+/* RESPONSIVE */
+/* --------- Media Queries --------- */
+@media screen and (max-width: 1024px) {
+    .features {
+        grid-template-columns: 1fr;
+        margin: 50px auto;
+        padding: 10px;
+    }
+
+    .partners-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .line {
+        bottom: auto;
+        left: 20px;
+        top: 100px;
+    }
+
+    img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .hh h1 {
+        font-size: 32px;
+    }
+
+    .hh h2 {
+        font-size: 24px;
+    }
+
+    .tagline p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        margin: 100px 10px 60px;
+        padding: 10px;
+    }
+
+    .menu-btn {
+        font-size: 36px;
+        padding: 8px 12px;
+    }
+
+    .sidebar {
+        width: 180px;
+        padding: 15px;
+    }
+
+    .badges span {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon i {
+        font-size: 20px;
+    }
+
+    .partner-card {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .footer-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-bottom-bar-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
