@@ -1,15 +1,7 @@
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
-let state = 0;
 menuBtn.addEventListener("click", () => {
-  if (state === 0) {
-    sidebar.classList.add("show");
-    state = 1;
-  }
-  else {
-    sidebar.classList.remove("show");
-    state = 0;
-  }
+sidebar.classList.toggle("show");
 });
 
 function openPage(section) {
@@ -260,5 +252,4 @@ newWindow.document.write(`
     </html>
 `);
 newWindow.document.close();
-
 }
