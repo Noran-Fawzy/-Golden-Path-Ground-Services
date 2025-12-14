@@ -1,9 +1,14 @@
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
-menuBtn.addEventListener("click", () => {
-sidebar.classList.toggle("show");
-});
 
+// 1. Sidebar Toggle Logic
+if (menuBtn && sidebar) {
+    menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+    });
+}
+
+// 2. Page Content & New Window Logic
 function openPage(section) {
     let content = "";
 
@@ -63,6 +68,53 @@ baggage handling, GSE operations, and aircraft turnaround activities.</p>
                 <li>Decide on control/mitigation.</li>
             </ol>
 
+            <h2>Risk Assessment Matrix (ICAO Standard)</h2>
+            <div class="table-container">
+                <table class="risk-matrix">
+                    <thead>
+                        <tr>
+                            <th class="axis-label" rowspan="2" style="background:white; color:black;">Probability</th>
+                            <th colspan="5" style="background:white; color:black;">Severity</th>
+                        </tr>
+                        <tr class="header-row">
+                            <th>Catastrophic<br>A</th>
+                            <th>Hazardous<br>B</th>
+                            <th>Major<br>C</th>
+                            <th>Minor<br>D</th>
+                            <th>Negligible<br>E</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="row-header">Frequent<br>5</th>
+                            <td class="bg-red">5A</td><td class="bg-red">5B</td><td class="bg-red">5C</td><td class="bg-yellow">5D</td><td class="bg-yellow">5E</td>
+                        </tr>
+                        <tr>
+                            <th class="row-header">Occasional<br>4</th>
+                            <td class="bg-red">4A</td><td class="bg-red">4B</td><td class="bg-yellow">4C</td><td class="bg-yellow">4D</td><td class="bg-yellow">4E</td>
+                        </tr>
+                        <tr>
+                            <th class="row-header">Remote<br>3</th>
+                            <td class="bg-red">3A</td><td class="bg-yellow">3B</td><td class="bg-yellow">3C</td><td class="bg-yellow">3D</td><td class="bg-green">3E</td>
+                        </tr>
+                        <tr>
+                            <th class="row-header">Improbable<br>2</th>
+                            <td class="bg-yellow">2A</td><td class="bg-yellow">2B</td><td class="bg-yellow">2C</td><td class="bg-green">2D</td><td class="bg-green">2E</td>
+                        </tr>
+                        <tr>
+                            <th class="row-header">Extremely<br>Improbable<br>1</th>
+                            <td class="bg-green">1A</td><td class="bg-green">1B</td><td class="bg-green">1C</td><td class="bg-green">1D</td><td class="bg-green">1E</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="risk-legend">
+                <div class="legend-item bg-red">Unacceptable Risk</div>
+                <div class="legend-item bg-yellow">Acceptable with Mitigation</div>
+                <div class="legend-item bg-green">Acceptable Risk</div>
+            </div>
+            <br>
             <h2>2.3 Risk Mitigation</h2>
             <p>Examples: GSE speed limits, Marshalling and wing-walker requirements, Aircraft stand clearance zones, PPE requirements, Enhanced training on FOD and apron safety.</p>
 
@@ -223,33 +275,67 @@ baggage handling, GSE operations, and aircraft turnaround activities.</p>
             `;
             break;
     }
-const newWindow = window.open("", "_blank");
-newWindow.document.write(`
-    <html>
-    <head>
-        <title>${section}</title>
-        <style>
-            body { background: #0b1624; color: white; font-family: Arial; padding: 20px; }
-            h1, h2 { color: gold; }
-            p, li { font-size: 18px; line-height: 1.6; }
-            ul, ol { margin-left: 20px; }
-            .home-btn {
-                display: inline-block;
-                margin-bottom: 20px;
-                padding: 10px 20px;
-                background: gold;
-                color: black;
-                text-decoration: none;
-                border-radius: 8px;
-                font-weight: bold;
-            }
-        </style>
-    </head>
-    <body>
-        <a href="index.html" class="home-btn">Home</a>
-        ${content}
-    </body>
-    </html>
-`);
-newWindow.document.close();
+
+    const newWindow = window.open("", "_blank");
+    newWindow.document.write(`
+        <html>
+        <head>
+            <title>${section}</title>
+            <style>
+                body { background: #0b1624; color: white; font-family: Arial; padding: 20px; display: flex; flex-direction: column; min-height: 90vh; }
+                h1, h2 { color: gold; }
+                p, li { font-size: 18px; line-height: 1.6; }
+                ul, ol { margin-left: 20px; }
+                
+                .home-btn {
+                    display: inline-block;
+                    margin-bottom: 20px;
+                    padding: 10px 20px;
+                    background: gold;
+                    color: black;
+                    text-decoration: none;
+                    border-radius: 8px;
+                    font-weight: bold;
+                    width: fit-content;
+                }
+
+                .page-footer {
+                    margin-top: auto;  padding-top: 40px;
+                    border-top: 1px solid #333;
+                    text-align: center;
+                    color: gold;
+                    font-style: italic;
+                    font-weight: bold;
+                }
+
+                .table-container { display: flex; justify-content: center; margin: 20px 0; }
+                .risk-matrix { border-collapse: collapse; width: 100%; max-width: 600px; text-align: center; color: black; background: white; }
+                .risk-matrix th, .risk-matrix td { border: 1px solid #000; padding: 8px; font-weight: bold; }
+                .header-row th, .row-header { background-color: #f0f0f0; }
+                .bg-red { background-color: #ff0000; color: black; }
+                .bg-yellow { background-color: #ffff00; color: black; }
+                .bg-green { background-color: #00ff00; color: black; }
+                .risk-legend { display: flex; flex-direction: column; max-width: 300px; margin: 0 auto; border: 1px solid white; background: #fff; }
+                .legend-item { padding: 5px; text-align: center; font-weight: bold; color: black; border-bottom: 1px solid black; }
+                .legend-item:last-child { border-bottom: none; }
+            </style>
+        </head>
+        <body>
+            <a href="index.html" class="home-btn">Home</a>
+            
+            <div style="flex: 1;">
+                ${content}
+            </div>
+
+        <div class="page-footer" style="text-align:center; padding:20px; font-family:Arial, sans-serif; font-size:14px; ">
+    Special thanks to <strong style="color:white;">Wesam Karam</strong> for trusting me with her website. <br>
+    Made with ❤️ by 
+    <a href="https://www.linkedin.com/in/noran-fawzy-najm/" target="_blank" style="color:#0077b5; text-decoration:none; font-weight:bold;">
+        Noran
+    </a>
+</div>
+        </body>
+        </html>
+    `);
+    newWindow.document.close();
 }
