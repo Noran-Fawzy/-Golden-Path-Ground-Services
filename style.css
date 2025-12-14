@@ -556,3 +556,10 @@ h3 {
         padding: 10px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .footer-bottom-bar {
+        text-align: center;
+    }
+}
+
