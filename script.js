@@ -328,14 +328,12 @@ baggage handling, GSE operations, and aircraft turnaround activities.</p>
             </div>
 
         <div class="page-footer" style="text-align:center; padding:20px; font-family:Arial, sans-serif; font-size:14px; ">
-    Special thanks to <strong style="color:white;">Wesam Karam</strong> for trusting me with her website. <br>
-    Made with ❤️ by 
-    <a href="https://www.linkedin.com/in/noran-fawzy-najm/" target="_blank" style="color:#0077b5; text-decoration:none; font-weight:bold;">
-        Noran
-    </a>
+    <strong style="color:white;">Wesam Karam</strong>  <br>
+   
 </div>
         </body>
         </html>
     `);
     newWindow.document.close();
 }
+
