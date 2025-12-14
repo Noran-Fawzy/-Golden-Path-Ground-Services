@@ -396,11 +396,13 @@ h3 {
 
 .footer-bottom-bar-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    gap: 5px;
 }
 
 .copyright-text {
