@@ -156,7 +156,6 @@
         
         </section>
 
-<!-- footer -->
 <footer class="main-footer">
     <div class="footer-content-wrapper">
         <div class="footer-column company-info">
@@ -190,19 +189,38 @@
             </p>
         </div>
     </div>
-<div class="footer-bottom-bar">
+
+<footer class="footer-bottom-bar"
+    style=" color:#fff; padding:20px; text-align:center; font-family:Arial, sans-serif;">
     <div class="footer-bottom-bar-content">
-        <p class="copyright-text">
-            © 2025 Golden Path Ground Services. All rights reserved.
+        <p class="copyright-text" style="margin:5px 0;">
+            © <span id="current-year"></span> Golden Path Ground Services. All rights reserved.
         </p>
-        <p class="certification-text">
+
+    <p class="client-signature" style="color: gold; font-weight: bold; margin:5px 0;">
+        Special thanks to <span style="color: white;">Wesam Karam</span> for trusting me with her website.
+    </p>
+
+        <p class="certification-text" style="margin:5px 0;">
             Certified by: <span class="cert-icao">ICAO</span> <span class="cert-iso">ISO 9001</span>
         </p>
+
+        <p class="designer-credit">
+            Made with ❤️ by
+            <a href="https://www.linkedin.com/in/noran-fawzy-najm/" target="_blank" rel="noopener noreferrer"
+                class="designer-link">
+                Noran
+            </a>
+        </p>
     </div>
-</div>
 </footer>
 
-    <script src="script.js"></script>
+<script>
+    const yearSpan = document.getElementById('current-year');
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
+</script>
+<script src="script.js"></script>
 </body>
 
 </html>
